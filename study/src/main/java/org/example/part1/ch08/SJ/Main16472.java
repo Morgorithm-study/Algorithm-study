@@ -22,7 +22,7 @@ public class Main16472 {
         e++;
       }
       maxLen = Math.max(maxLen, e - s);
-      System.out.println(e - s);
+//      System.out.println(e - s);
       cntAlpha[arr.charAt(s) - 'a']--;
     }
 
