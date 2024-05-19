@@ -1,10 +1,11 @@
 package org.example.part1.ch01.YJ;
 
-import java.util.*;
 import java.util.Scanner;
 
-public class Main {
+public class Main2744 {
     public static void main(String[] args) {
+
+
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
 
@@ -18,5 +19,6 @@ public class Main {
                 System.out.print((char)(ch - 'a' + 'A'));
             }
         }
+
     }
 }
