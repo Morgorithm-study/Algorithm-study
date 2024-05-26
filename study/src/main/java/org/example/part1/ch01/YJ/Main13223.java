@@ -43,9 +43,6 @@ public class Main13223 {
         int resTotal = resSec_h+resSec_m+resSec_s;
         int curTotal = curSec_h+curSec_m+curSec_s;
 
-        String hour = "";
-        String min = "";
-        String sec = "";
 
         if ( resTotal - curTotal <= 0 )
             resTotal += 86400;
