@@ -1,4 +1,4 @@
-package org.example.part1.ch01.DY;
+package org.example.part1.ch02.DY;
 
 import java.io.BufferedReader;
 import java.io.IOException;
