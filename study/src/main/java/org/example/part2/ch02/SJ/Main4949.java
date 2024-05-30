@@ -1,4 +1,4 @@
-package org.example.part2.ch02;
+package org.example.part2.ch02.SJ;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
