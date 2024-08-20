@@ -2,32 +2,34 @@ package org.example.part1.ch05.DY;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Main1181 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
 
-        String[] arr = new String[n];
-        for(int i = 0; i < n; i++){
+        String[] arr = new String[N];
+        for(int i = 0; i < N; i++){
             arr[i] = br.readLine();
         }
-        Arrays.sort(arr, new Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                if(s1.length()== s2.length())
-                    return s1.compareTo(s2); //compareTo 값 비교
-                else
-                    return s1.length() - s2.length();
-            }
-        });
+        br.close();
 
-        System.out.println(arr[0]);
-        for(int i = 1; i < n; i++){
-            if (!arr[i].equals(arr[i - 1])) { //중복 안되게
+        Arrays.sort(arr, ((o1, o2) -> {
+            if(o1.length() == o2.length()){
+                return o1.compareTo(o2);
+            }
+            else{
+                return o1.length() - o2.length(); //오름차순
+            }
+        }));
+
+        String str = arr[0];
+        System.out.println(str);
+        for(int i = 1; i< N; i++){
+            if(!arr[i].equals(str)){
                 System.out.println(arr[i]);
+                str = arr[i];
             }
         }
     }
