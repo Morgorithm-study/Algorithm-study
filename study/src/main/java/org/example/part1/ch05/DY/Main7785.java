@@ -10,33 +10,29 @@ public class Main7785 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int N = Integer.parseInt(br.readLine());
-        HashSet<String> arr = new HashSet<>();
+        int n = Integer.parseInt(br.readLine());
 
-        for(int i = 0; i < N; i++) {
-            // 한 줄을 읽어옵니다.
+        HashSet<String> set = new HashSet<>();
+        for(int i = 0; i < n; i++){
             st = new StringTokenizer(br.readLine());
+            String name = st.nextToken();
+            String enterOrLeave = st.nextToken();
 
-            String key = st.nextToken(); //키 (사람 이름)
-            String value = st.nextToken(); // 값(출퇴근 여부)
-
-            if(value.equals("enter")){ //출근일 경우 HashSet에 저장하고(WorkArray)
-                arr.add(key);
-            }else if(value.equals("leave")){ //퇴근일 경우 HashSet에서 지운다.
-                arr.remove(key);
+            if(enterOrLeave.equals("enter")){
+                set.add(name);
+            }else{
+                set.remove(name);
             }
         }
-
         br.close();
 
-        //정렬을 위해 list를 따로 만들어줌(Collections.sort()위해)
-        ArrayList<String> list = new ArrayList<String>(arr);
-        Collections.sort(list);
+        ArrayList<String> str = new ArrayList<>(set);
+        Collections.sort(str, (o1, o2) -> {
+            return o2.compareTo(o1);
+        });
 
-        for(int i = list.size()-1;  i >= 0; i--){ //역순 정렬을 위해 뒤부터 출력
-            System.out.println(list.get(i));
+        for(int i = 0; i < str.size(); i++){
+            System.out.println(str.get(i));
         }
-
-
     }
 }
